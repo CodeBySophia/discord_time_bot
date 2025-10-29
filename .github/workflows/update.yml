@@ -1,0 +1,20 @@
+name: Update Discord Channel Name
+
+on:
+  schedule:
+    - cron: "0,15,30,45 * * * *"  # každou čtvrthodinu
+  workflow_dispatch:               # možnost spustit ručně
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: node index.js
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
