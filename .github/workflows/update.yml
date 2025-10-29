@@ -2,8 +2,8 @@ name: Update Discord Channel Name
 
 on:
   schedule:
-    - cron: "0,15,30,45 * * * *"  # každou čtvrthodinu
-  workflow_dispatch:               # možnost spustit ručně
+    - cron: "0,15,30,45 * * * *"  # every quarter hour
+  workflow_dispatch:               # option to run manually
 
 jobs:
   update:
