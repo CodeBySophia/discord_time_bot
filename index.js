@@ -28,7 +28,7 @@ async function updateChannelName() {
 
   const hh = hour.toString().padStart(2, "0");
   const mm = minute.toString().padStart(2, "0");
-  const newName = `🕒-bangkok-${hh}h${mm}`;
+  const newName = `🕒・bangkok・${hh}h${mm}`;
 
   // Cannel update via Discord API
   const response = await fetch(`https://discord.com/api/v10/channels/${process.env.CHANNEL_ID}`, {
